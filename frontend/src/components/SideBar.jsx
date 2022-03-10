@@ -3,20 +3,21 @@ import { Link, NavLink } from 'react-router-dom'
 import { FiHome } from 'react-icons/fi'
 import { IoIosArrowForward } from 'react-icons/io'
 
+import { categories } from '../utils/data'
 import logo from '../assets/insocial.png'
 
 const isNotActiveStyle = 'flex items-center px-5 my-2 gap-3 text-xl text-gray-500 hover:text-black transition-all duration-200 ease-in-out capital'
 
 const isActiveStyle = 'flex items-center px-5 my-2 gap-3 text-xl text-fuchsia-400 border-r-2 border-black transition-all duration-200 ease-in-out capital hover:text-black'
 
-const categories = [
-    { name: 'Animals' },
-    { name: 'Cars' },
-    { name: 'Coding' },
-    { name: 'Gaming' },
-    { name: 'Photography' },
-    { name: 'Wallpaper' }
-]
+// const categories = [
+//     { name: 'Animals' },
+//     { name: 'Cars' },
+//     { name: 'Coding' },
+//     { name: 'Gaming' },
+//     { name: 'Photography' },
+//     { name: 'Wallpaper' }
+// ]
 
 const SideBar = ({ user, closeToggle }) => {
     const handleCloseSideBar = () => {
@@ -35,8 +36,9 @@ const SideBar = ({ user, closeToggle }) => {
                     Home
                 </NavLink>
                 <h3 className='mt-2 px-5 text-base 2xl:text-xl'>Discover Categories</h3>
-                {categories.slice(0, categories.length - 1).map((category, i) => (
+                {categories.sort((a,b) => a.name.localeCompare(b.name)).slice(0, categories.length - 1).map((category, i) => (
                     <NavLink to={`/category/${category.name}`} key={i} className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle } onClick={handleCloseSideBar}>
+                        <img src={category.image} alt={category.name} className='w-10 h-10 rounded-full object-cover' />
                         {category.name}
                     </NavLink>
                 ))}

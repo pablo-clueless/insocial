@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
-import { FiDownload, FiTrash2, FiExternalLink } from 'react-icons/fi'
+import { FiDownloadCloud, FiTrash2, FiExternalLink } from 'react-icons/fi'
 
 import { client, urlFor } from '../client'
 import { fetchUser } from '../utils/fetchUser'
@@ -51,8 +51,8 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save }}) => {
                 <div className='absolute top-0 w-full h-full flex flex-col justify-between p-1 pr-2 pt-2 pb-2 z-50' style={{ height: '100%' }}>
                     <div className='flex items-center justify-between'>
                         <div className='flex gap-2'>
-                            <a href={`${image?.asset?.url}?dl=`} download onClick={(e) => e.stopPropagation()} className='bg-white w-9 h-9 flex items-center justify-center rounded-full textxl text-black opacity-75 hover:opacity-100 hover:shadow-md hover:scale-110 duration-200 ease-in-out'>
-                                <FiDownload />
+                            <a href={`${image?.asset?.url}?dl=`} download onClick={(e) => e.stopPropagation()} className='bg-white w-9 h-9 flex items-center justify-center rounded-full text-base text-black opacity-75 hover:opacity-100 hover:shadow-md hover:scale-110 duration-200 ease-in-out'>
+                                <FiDownloadCloud />
                             </a>
                         </div>
                         {alreadySaved ? (

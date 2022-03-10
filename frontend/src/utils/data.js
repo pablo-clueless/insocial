@@ -54,6 +54,72 @@ export const feedQuery = `*[_type == 'pin'] | order(_createdAt desc) {
     },
 }`
 
+export const pinDetailQuery = (pinId) => {
+  const query = `*[_type == "pin" && _id == '${pinId}']{
+    image{
+      asset->{
+        url
+      }
+    },
+    _id,
+    title, 
+    about,
+    category,
+    destination,
+    postedBy->{
+      _id,
+      userName,
+      image
+    },
+   save[]{
+      postedBy->{
+        _id,
+        userName,
+        image
+      },
+    },
+    comments[]{
+      comment,
+      _key,
+      postedBy->{
+        _id,
+        userName,
+        image
+      },
+    }
+  }`
+
+  return query
+}
+
+export const pinDetailMorePinQuery = (pin) => {
+  const query = `*[_type == "pin" && category == '${pin.category}' && _id != '${pin._id}' ]{
+    image{
+      asset->{
+        url
+      }
+    },
+    _id,
+    destination,
+    postedBy->{
+      _id,
+      userName,
+      image
+    },
+    save[]{
+      _key,
+      postedBy->{
+        _id,
+        userName,
+        image
+      },
+    },
+  }`
+
+  return query
+}
+
+
 export const categories = [
     {
       name: 'Cars',
@@ -106,4 +172,16 @@ export const categories = [
       name: 'Others',
       image: 'https://i.pinimg.com/236x/2e/63/c8/2e63c82dfd49aca8dccf9de3f57e8588.jpg',
     },
+    {
+      name: 'People',
+      image: 'https://i.pinimg.com/236x/e0/be/c4/e0bec482926f5dd02086a6d92be13216.jpg'
+    },
+    {
+      name: 'Anime',
+      image: 'https://i.pinimg.com/236x/27/f8/ac/27f8ac64f105eafc911aa3f34c48eadb.jpg'
+    },
+    {
+      name: 'Cartoons',
+      image: 'https://i.pinimg.com/736x/d3/46/2c/d3462c1c8e05bfce547e15f89fef77b1.jpg'
+    }
   ];
