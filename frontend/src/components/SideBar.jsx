@@ -6,18 +6,9 @@ import { IoIosArrowForward } from 'react-icons/io'
 import { categories } from '../utils/data'
 import logo from '../assets/insocial.png'
 
-const isNotActiveStyle = 'flex items-center px-5 my-2 gap-3 text-xl text-gray-500 hover:text-black transition-all duration-200 ease-in-out capital'
+const isNotActiveStyle = 'flex items-center px-5 py-2 my-[0.5px] gap-3 text-xl text-gray-500 hover:text-black transition-all duration-200 ease-in-out capital'
 
-const isActiveStyle = 'flex items-center px-5 my-2 gap-3 text-xl text-fuchsia-400 border-r-2 border-black transition-all duration-200 ease-in-out capital hover:text-black'
-
-// const categories = [
-//     { name: 'Animals' },
-//     { name: 'Cars' },
-//     { name: 'Coding' },
-//     { name: 'Gaming' },
-//     { name: 'Photography' },
-//     { name: 'Wallpaper' }
-// ]
+const isActiveStyle = 'flex bg-gray-200 items-center px-5 py-2 my-[0.5px] gap-3 text-xl text-fuchsia-400 border-r-4 border-fuchsia-500 transition-all duration-200 ease-in-out capital hover:text-black'
 
 const SideBar = ({ user, closeToggle }) => {
     const handleCloseSideBar = () => {
