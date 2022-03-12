@@ -18,7 +18,8 @@
     "react-masonry-css": "^1.0.16",
     "react-router-dom": "^6.2.1",
     "react-spinners": "^0.11.0",
-    "url": "^0.11.0"
+    "url": "^0.11.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",
