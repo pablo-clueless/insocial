@@ -15,7 +15,7 @@ const NavBar = ({ searchTerm, setSearchTerm, user }) => {
           </div>
           <div className='flex items-center gap-3 mx-3'>
               <Link to={`user-profile/${user?._id}`} className='hidden md:block'>
-                <img src={user.image} alt='user' className='w-20 h-15 rounded-lg' />
+                <img src={user.image} alt='user' className='w-15 h-15 rounded-full object-cover shadow-md border-[1px] border-fuchsia-500' />
               </Link>
               <Link to='create-pin' className=' rounded-lg flex justify-center items-center hover:scale-110 duration-75 ease-in-out'>
                   <FiPlus fontSize={25} />

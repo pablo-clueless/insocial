@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
-import { CreatePin, Feed, NavBar, PinDetail, Search } from '../components/index'
+import { CreatePin, Feed, Login, NavBar, PinDetail, Search } from '../components/index'
 
 const Pins = ({ user }) => {
     const [searchTerm, setSearchTerm] = useState('')
@@ -18,6 +18,7 @@ const Pins = ({ user }) => {
                 <Route path='/pin-detail/:pinId' element={<PinDetail user={user} />} />
                 <Route path='/create-pin' element={<CreatePin user={user} />} />
                 <Route path='/search' element={<Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />} />
+                <Route path='/login' element={<Login />} />
             </Routes>
         </div>
     </div>

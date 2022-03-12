@@ -21,7 +21,7 @@ const SideBar = ({ user, closeToggle }) => {
             <Link to='/' className='flex px-5 gap-2 my-8 pt-1 w-190 items-center' onClick={handleCloseSideBar} >
                 <img src={logo} alt="insocial logo" className='w-full' />
             </Link>
-            <div className='flex flex-col gap-5'>
+            <div className='flex flex-col gap-5 mb-3'>
                 <NavLink to='/' className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle } onClick={handleCloseSideBar}>
                     <FiHome />
                     Home
