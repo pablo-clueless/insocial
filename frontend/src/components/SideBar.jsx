@@ -29,7 +29,7 @@ const SideBar = ({ user, closeToggle }) => {
                 <h3 className='mt-2 px-5 text-base 2xl:text-xl'>Discover Categories</h3>
                 {categories.sort((a,b) => a.name.localeCompare(b.name)).slice(0, categories.length - 1).map((category, i) => (
                     <NavLink to={`/category/${category.name}`} key={i} className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle } onClick={handleCloseSideBar}>
-                        <img src={category.image} alt={category.name} className='w-10 h-10 rounded-full object-cover' />
+                        <img src={category.image} alt={category.name} className='w-10 h-10 rounded-full shadow-sm object-cover' />
                         {category.name}
                     </NavLink>
                 ))}
