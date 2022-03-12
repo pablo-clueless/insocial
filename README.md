@@ -16,6 +16,10 @@ You can add links to your social media accounts where the pictures exists to dri
 
 The Sanity backend has similarities with MongoDB/Mongoose and uses a query language similar to GraphQL which means you don't get redudant data. Sanity takes away the stress of dealing with controllers and routes, so all you have to do is define your Schemas. Check it out here [Sanity.io](https://sanity.io).
 
+## Minimalist UI made with TailwindCSS
+
+TailwindCSS makes sytling easy. Think of not having t add media queries to all components of your app.
+
 ## Your privacy is a priority
 
 Login in with your Google account, everything is managed by Google using the [react-google-login](https://github.com/anthonyjgrove/react-google-login). Only required cookies are colleted, your data is safe.
