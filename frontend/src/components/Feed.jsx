@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 import { client } from '../client'
 import { searchQuery, feedQuery } from '../utils/data'
@@ -33,7 +33,14 @@ const Feed = () => {
 
     if(loading) return <Spinner message='We are adding new ideas to your feed!' />
 
-    if(!pins?.length) return <h2 className='w-full text-center font-bold text-xl mt-10'>Oops, it's a 404: no pins available</h2>
+    if(!pins?.length) return <div className='flex flex-col items-center justify-center relative top-72'>
+      <h2 className='text-xl'>No pins found here. Wanna add yours?</h2>
+      <Link to='/create-pin'>
+        <button type='button' className='bg-fuchsia-500 text-white px-4 py-1 mt-10 border-[1px] border-transparent outline-none hover:bg-white hover:border-fuchsia-500 hover:border-[1px] hover:text-fuchsia-500 transition-all duration-500 ease-in-out'>
+          Add Pins
+        </button>
+      </Link>
+    </div>
     
   return (
     <div>

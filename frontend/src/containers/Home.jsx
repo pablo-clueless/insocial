@@ -39,6 +39,7 @@ const Home = () => {
           <FiMenu fontSize={35} strokeWidth={1} className='cursor-pointer' onClick={() => setToggleSideBar(true)} />
           <Link to='/'>
             <img src={logo} alt='insocial logo' className='w-30 h-9' />
+            <p className='text-center'>...share amazing photos</p>
           </Link>
           <Link to={`user-profile/${user?._id}`}>
             <img src={user?.image} alt='user image' className='w-10 h-10 rounded-full' />
